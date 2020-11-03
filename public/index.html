@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Two-Factor Auth</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.min.css"
+      integrity="sha256-1nEaE91OpXJD7M6W5uSiqxhdmrY+lOOTHC1iUxU9Pds="
+      crossorigin="anonymous"
+    />
+    <script defer src="bundle.js"></script>
+
+    <style>
+      input,
+      button {
+        margin-bottom: 1rem;
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="content section">
+    <h1>Two Factor Auth with Firebase Demo</h1>
+    <div id="2fa-captcha"></div>
+
+    <h3>Auth State</h3>
+
+    <div id="user"></div>
+
+    <h3>1. Sign Up and Verify Email</h3>
+
+    <input class="input" id="signup-email" value="" />
+    <input class="input" id="signup-password" value="password" />
+
+    <button class="button is-success" id="signup-button">
+      Sign Up as New User</button
+    ><br />
+
+    <hr />
+
+    <h3>2. Enroll in 2FA</h3>
+
+    <h5>2a. Enroll Phone</h5>
+
+    <input class="input" id="enroll-phone" value="+" />
+
+    <button class="button is-primary" id="enroll-button">Enroll</button>
+
+    <h5>2a. Verify Code</h5>
+
+    <input class="input" id="enroll-code" value="" />
+    <button class="button is-success" id="enroll-verify">Verify</button>
+
+    <h5>4. Wait some time so you will be asked to reauth</h5>
+
+    <h5>5. Link Google Auth</h5>
+    <button class="button is-info" id="link-google">Link Google</button>
+
+    <h1 id="link-error"></h1>
+    <div id="providers"></div>
+
+    <h5>6. Refresh</h5>
+    <div>
+      Even if you received an error, on refresh, your google account is linked.
+    </div>
+  </body>
+</html>
